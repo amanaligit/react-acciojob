@@ -7,15 +7,15 @@ export default class ApiData extends Component {
     this.state = {
       loading: false,
       data: {},
-      pageNo: 1,
+      // pageNo: 1,
     };
-    this.setPageNo = this.setPageNo.bind(this);
+    // this.setPageNo = this.setPageNo.bind(this);
   }
 
   fetchData() {
     this.setState({ ...this.state, loading: true });
     setTimeout(() => {
-      fetch(`https://reqres.in/api/users/${this.state.pageNo}`)
+      fetch(`https://reqres.in/api/users/${this.props.match.params.pageNo}`)
         .then((res) => res.json())
         .then((json) => {
           // console.log(json.data);
@@ -29,21 +29,24 @@ export default class ApiData extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.pageNo && prevState.pageNo !== this.state.pageNo) {
+    if (
+      prevProps.match.params.pageNo &&
+      prevProps.match.params.pageNo !== this.props.match.params.pageNo
+    ) {
       // console.log("component did update ran");
       this.fetchData();
     }
   }
 
-  setPageNo(pageNo) {
-    this.setState({ ...this.state, pageNo: pageNo });
-  }
+  // setPageNo(pageNo) {
+  //   this.setState({ ...this.state, pageNo: pageNo });
+  // }
 
   render() {
-    const propsForChild = {
-      setPageNo: this.setPageNo,
-      pageNo: this.state.pageNo,
-    };
+    // const propsForChild = {
+    //   setPageNo: this.setPageNo,
+    //   pageNo: this.state.pageNo,
+    // };
     // console.log("re-rendering");
     console.log(this.props.match.params.pageNo);
 
@@ -75,7 +78,7 @@ export default class ApiData extends Component {
           )}
         </article>
         {/* <NavLinks {...propsForChild} /> */}
-        <NavLinks setPageNo={this.setPageNo} pageNo={this.state.pageNo} />
+        <NavLinks pageNo={this.props.match.params.pageNo} />
       </div>
     );
   }

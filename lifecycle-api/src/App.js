@@ -5,20 +5,20 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
 import NotFound from "./Components/NotFound";
+import Header from "./Components/Header";
 
 export default class App extends Component {
   render() {
     return (
       <Router>
+        <Header />
         <main className="container" style={{ minHeight: "95vh" }}>
-          <h1 className="display-1 text-center">LifeCycle API Example</h1>
           <Switch>
-            <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/users/:pageNo" component={ApiData} />
+            <Route exact path="/home" component={Home} />
             <Route path="/" component={NotFound} />
             {/* I want to make switches in-place  */}
-
             {/* <ApiData /> */}
             {/* <Home /> */}
             {/* <About /> */}
