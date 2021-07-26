@@ -28,6 +28,7 @@ export default class LifeCycleB extends Component {
   }
 
   componentDidMount() {
+    // timer has nothing to do with rendering but we are keeping it inside our state
     this.setState({
       ...this.state,
       timer: setInterval(() => console.log("running timer"), 1000),

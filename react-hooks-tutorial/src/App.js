@@ -7,6 +7,12 @@ import HookObject from "./components/HookObject";
 import HookArray from "./components/HookArray";
 import EffectCounter from "./components/EffectCounter";
 import MouseContainer from "./components/MouseContainer";
+import FetchUseEffect from "./components/FetchUseEffect";
+import ComponentA from "./components/ExampleUseContext/ComponentA";
+import RefFocusInput from "./components/RefFocusInput";
+import RefTimer from "./components/RefTimer";
+import MemoCounter from "./components/MemoCounter";
+import ParentComponent from "./components/useCallbackExample/ParentComponent";
 
 function App() {
   return (
@@ -17,7 +23,14 @@ function App() {
       {/* <HookObject /> */}
       {/* <HookArray /> */}
       {/* <EffectCounter /> */}
-      <MouseContainer />
+      {/* <MouseContainer /> */}
+      {/* <FetchUseEffect /> */}
+      {/* <ComponentA /> */}
+
+      {/* <RefFocusInput /> */}
+      {/* <RefTimer /> */}
+      {/* <MemoCounter />*/}
+      <ParentComponent />
     </div>
   );
 }
