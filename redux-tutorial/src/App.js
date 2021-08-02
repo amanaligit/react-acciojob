@@ -24,10 +24,10 @@ function App() {
   return (
     <div className="container">
       <Provider store={store}>
-        <Welcome />
-        <Counter />
-        <Form />
-        <API />
+        {/* <Welcome /> */}
+        {/* <Counter /> */}
+        {/* <Form /> */}
+        {/* <API /> */}
         <FormValidation />
       </Provider>
     </div>

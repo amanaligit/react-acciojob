@@ -5,9 +5,8 @@ function FormValidation() {
   const [phone, setPhone] = useState("");
 
   const phoneIsValid = /^\d{3}[ -]?\d{3}[ -]?\d{4}$/g.test(phone);
-  const passwordIsInvalid = /^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|.*\s.*)$/g.test(
-    password
-  );
+  const passwordIsInvalid =
+    /^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|.*\s.*|[A-Z].*)$/g.test(password);
 
   // \w for word letters
   // \d for digits
